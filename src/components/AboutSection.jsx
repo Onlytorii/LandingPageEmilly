@@ -2,10 +2,10 @@ import SectionWrapper from "./shared/SectionWrapper";
 import Reveal from "./shared/Reveal";
 
 const PSYCHOLOGIST = {
-  name: "[Nome da Psicóloga]",
+  name: "Émilly",
   crp: "[xx/xxxxx]",
   photoAlt: "Foto de [Nome da Psicóloga], psicóloga clínica",
-  photoSrc: "/images/psicologa-perfil.jpeg",
+  photoSrc: "/images/psicologa-perfil02.jpeg",
 };
 
 export default function AboutSection() {
@@ -50,7 +50,7 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <p className="mt-6 italic text-brand-magenta font-medium">
+          <p className="mt-6 italic text-brand-magenta font-high">
             — {PSYCHOLOGIST.name}, CRP {PSYCHOLOGIST.crp}
           </p>
         </Reveal>

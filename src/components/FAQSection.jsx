@@ -10,7 +10,7 @@ import { faqItems } from "../data/faqItems";
  */
 function AccordionItem({ id, question, answer, isOpen, onToggle }) {
   return (
-    <div className="border-b border-sage-100">
+    <div className="border-b border-white/10">
       <h3>
         <button
           type="button"
@@ -21,11 +21,11 @@ function AccordionItem({ id, question, answer, isOpen, onToggle }) {
           className="w-full flex items-center justify-between gap-4 py-5 text-left
             focus-visible:outline-2 focus-visible:outline-offset-2"
         >
-          <span className="font-medium text-ink text-lg">{question}</span>
+          <span className="font-medium text-sage-50 text-lg">{question}</span>
           <Plus
             aria-hidden="true"
             size={20}
-            className={`shrink-0 text-brand-magenta transition-transform duration-300 ${isOpen ? "rotate-45" : "rotate-0"}`}
+            className={`shrink-0 text-brand-pink transition-transform duration-300 ${isOpen ? "rotate-45" : "rotate-0"}`}
           />
         </button>
       </h3>
@@ -38,7 +38,7 @@ function AccordionItem({ id, question, answer, isOpen, onToggle }) {
         style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
       >
         <div className="overflow-hidden">
-          <p className="pb-5 text-ink/70 leading-relaxed">{answer}</p>
+          <p className="pb-5 text-sage-100/70 leading-relaxed">{answer}</p>
         </div>
       </div>
     </div>
@@ -51,25 +51,24 @@ export default function FAQSection() {
   const toggle = (id) => setOpenId((current) => (current === id ? null : id));
 
   return (
-    <SectionWrapper id="faq" className="bg-sage-50">
+    <SectionWrapper id="faq" className="bg-sage-800">
       <Reveal className="max-w-2xl mb-10">
-        <h2 className="text-3xl md:text-4xl font-display font-medium text-ink">
+        <h2 className="text-3xl md:text-4xl font-display font-medium text-sage-50">
           Perguntas frequentes
         </h2>
       </Reveal>
 
-
       <Reveal delay={150} className="max-w-3xl">
-      <div className="max-w-3xl card-light px-6 md:px-8">
-        {faqItems.map((item) => (
-          <AccordionItem
-            key={item.id}
-            {...item}
-            isOpen={openId === item.id}
-            onToggle={() => toggle(item.id)}
-          />
-        ))}
-      </div>
+        <div className="card-glass px-6 md:px-8">
+          {faqItems.map((item) => (
+            <AccordionItem
+              key={item.id}
+              {...item}
+              isOpen={openId === item.id}
+              onToggle={() => toggle(item.id)}
+            />
+          ))}
+        </div>
       </Reveal>
     </SectionWrapper>
   );

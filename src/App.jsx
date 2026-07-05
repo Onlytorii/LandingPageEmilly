@@ -1,4 +1,4 @@
-
+import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import PainPointsSection from "./components/PainPointsSection";
 import BenefitsSection from "./components/BenefitsSection";
@@ -11,8 +11,8 @@ import FloatingWhatsApp from "./components/shared/FloatingWhatsApp";
 export default function App() {
   return (
     <>
-      
-      <main>
+      <Navbar />
+      <main id="top">
         <HeroSection />
         <PainPointsSection />
         <BenefitsSection />
