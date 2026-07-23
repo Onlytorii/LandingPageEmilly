@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import WhatsAppButton from "./shared/WhatsAppButton";
 
 export default function HeroSection() {
@@ -29,6 +30,17 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      <a
+        href="#identificacao"
+        aria-label="Rolar para a próxima seção"
+        className="animate-fade-up hidden md:flex absolute bottom-8 inset-x-0 flex-col items-center
+          gap-2 text-white/70 hover:text-white transition-colors"
+        style={{ animationDelay: "500ms" }}
+      >
+        <span className="text-xs font-medium uppercase tracking-widest">Saiba mais</span>
+        <ChevronDown size={18} aria-hidden="true" className="animate-bounce" />
+      </a>
     </header>
   );
 }

@@ -1,16 +1,13 @@
+import { useState } from "react";
+import { UserRound } from "lucide-react";
 import SectionWrapper from "./shared/SectionWrapper";
 import Reveal from "./shared/Reveal";
-
-const PSYCHOLOGIST = {
-  name: "Émilly",
-  crp: "[xx/xxxxx]",
-  photoAlt: "Foto de [Nome da Psicóloga], psicóloga clínica",
-  photoSrc: "/images/psicologa-perfil02.jpeg",
-};
+import { PSYCHOLOGIST } from "../data/psychologist";
 
 export default function AboutSection() {
+  const [photoFailed, setPhotoFailed] = useState(false);
   return (
-    <SectionWrapper id="sobre" className="bg-sage-500">
+    <SectionWrapper id="sobre" className="bg-sky-gradient">
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <Reveal className="order-2 md:order-1">
           <span
@@ -22,7 +19,7 @@ export default function AboutSection() {
             Um pouco sobre mim
           </h2>
 
-          <div className="space-y-4 text-ink/100 leading-relaxed">
+          <div className="space-y-4 text-ink leading-relaxed">
             <p>
               Meu nome é {PSYCHOLOGIST.name}, sou psicóloga clínica (CRP{" "}
               {PSYCHOLOGIST.crp}) e minha jornada na psicologia nasceu de uma
@@ -50,7 +47,7 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <p className="mt-6 italic text-brand-magenta font-high">
+          <p className="mt-6 italic text-brand-magenta font-medium">
             — {PSYCHOLOGIST.name}, CRP {PSYCHOLOGIST.crp}
           </p>
         </Reveal>
@@ -63,10 +60,21 @@ export default function AboutSection() {
           />
           <img
             src={PSYCHOLOGIST.photoSrc}
-            alt={PSYCHOLOGIST.photoAlt}
-            className="relative rounded-4xl shadow-sm w-full h-auto object-cover aspect-[4/5]"
+            alt={`Foto de ${PSYCHOLOGIST.name}, psicóloga clínica`}
+            className={`relative rounded-4xl shadow-sm w-full h-auto object-cover aspect-[4/5] ${
+              photoFailed ? "hidden" : ""
+            }`}
             loading="lazy"
+            onError={() => setPhotoFailed(true)}
           />
+          {photoFailed && (
+            <div
+              className="relative rounded-4xl shadow-sm w-full aspect-[4/5] bg-sage-200
+                flex items-center justify-center text-sage-500"
+            >
+              <UserRound size={64} aria-hidden="true" />
+            </div>
+          )}
         </Reveal>
       </div>
     </SectionWrapper>

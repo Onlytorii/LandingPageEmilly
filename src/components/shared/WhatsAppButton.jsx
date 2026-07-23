@@ -1,7 +1,5 @@
 import { MessageCircle } from "lucide-react";
-
-// Centraliza o número de contato — trocar pelo número real da profissional
-const WHATSAPP_NUMBER = "5584992086643"; // formato: DDI + DDD + número
+import { PSYCHOLOGIST } from "../../data/psychologist";
 
 /**
  * Botão de CTA para WhatsApp, reutilizável em qualquer seção.
@@ -13,7 +11,7 @@ export default function WhatsAppButton({
   variant = "primary", // "primary" | "inverted"
   className = "",
 }) {
-  const href = `https://wa.me/5584992086643?text=${encodeURIComponent(
+  const href = `https://wa.me/${PSYCHOLOGIST.whatsappNumber}?text=${encodeURIComponent(
     message
   )}`;
 
@@ -30,12 +28,16 @@ export default function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${children} via WhatsApp`}
-      className={`inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold
+      className={`group inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold
         transition-all duration-300 ease-out hover:-translate-y-0.5 active:scale-95
         focus-visible:outline-2 focus-visible:outline-offset-2
         ${styles[variant]} ${className}`}
     >
-      <MessageCircle size={20} aria-hidden="true" />
+      <MessageCircle
+        size={20}
+        aria-hidden="true"
+        className="transition-transform duration-300 group-hover:rotate-12"
+      />
       {children}
     </a>
   );

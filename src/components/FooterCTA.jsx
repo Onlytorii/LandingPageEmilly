@@ -1,7 +1,5 @@
 import WhatsAppButton from "./shared/WhatsAppButton";
-
-const PSYCHOLOGIST_NAME = "[Nome da Psicóloga]";
-const CRP = "[xx/xxxxx]";
+import { PSYCHOLOGIST } from "../data/psychologist";
 
 export default function FooterCTA() {
   return (
@@ -26,7 +24,7 @@ export default function FooterCTA() {
       <footer className="bg-ink text-sage-100/70 text-sm">
         <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 space-y-4">
           <p className="text-sage-50 font-medium">
-            {PSYCHOLOGIST_NAME} · CRP {CRP}
+            {PSYCHOLOGIST.name} · CRP {PSYCHOLOGIST.crp}
           </p>
 
           <p className="leading-relaxed max-w-2xl">
@@ -56,6 +54,10 @@ export default function FooterCTA() {
               contato@exemplo.com
             </a>
           </nav>
+
+          <p className="text-xs text-sage-100/40 pt-2">
+            © {new Date().getFullYear()} {PSYCHOLOGIST.name}. Todos os direitos reservados.
+          </p>
         </div>
       </footer>
     </>

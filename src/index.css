@@ -7,6 +7,12 @@
   --color-brand-magenta: #9E2FAC;
   --color-brand-pink: #FF6FB0;
 
+  /* Tons de céu extraídos da foto da seção "Sobre", usados no fundo dessa seção */
+  --color-sky-blue: #98C8DC;
+  --color-sky-powder: #C9D7E0;
+  --color-sky-sage: #BDD2D7;
+  --color-sky-cream: #F1EFE3;
+
   /* Escala clara derivada do azul, para seções de fundo claro (cards, FAQ) */
   --color-sage-50:  #EEF2FC;
   --color-sage-100: #D6DEF7;
@@ -75,6 +81,16 @@
 } 
   .bg-brand-gradient {
     background: linear-gradient(135deg, #194ABE 0%, #1D2272 55%, #9E2FAC 100%);
+  }
+
+  .bg-sky-gradient {
+    background: linear-gradient(
+      160deg,
+      var(--color-sky-cream) 0%,
+      var(--color-sky-powder) 45%,
+      var(--color-sky-sage) 70%,
+      var(--color-sky-blue) 100%
+    );
   }
 
   .card-light {
