@@ -7,7 +7,7 @@ import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import FAQSection from "./components/FAQSection";
 import FooterCTA from "./components/FooterCTA";
 import FloatingWhatsApp from "./components/shared/FloatingWhatsApp";
-import SEOSchema from "./components/shared/SEOSchema";
+import SEOSchema from "./components/shared/Seoschema";
 
 export default function App() {
   return (
